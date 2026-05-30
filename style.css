@@ -198,6 +198,71 @@ html, body {
   animation: burstOpen 0.5s forwards;
 }
 
+/* Letter burst animation container */
+.letters-burst-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.letter-particle {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  width: 90px;
+  height: 70px;
+  background: var(--envelope-color, #f5efe6);
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3), inset 0 1px 3px rgba(255,255,255,0.4);
+  transform: translateX(-50%);
+  animation: shootLetter 2.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  overflow: hidden;
+}
+
+.letter-particle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+  border-top: 35px solid rgba(0, 0, 0, 0.08);
+}
+
+.letter-particle::after {
+  content: '';
+  position: absolute;
+  top: 35px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+@keyframes shootLetter {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) rotateZ(0deg) scale(1);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-40px) rotateZ(-8deg) scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateX(-50%) translateY(-280px) rotateZ(-15deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-520px) rotateZ(-25deg) scale(0.8);
+  }
+}
+
 /* ═══════════════════════════════════════════
    SCREEN 2 — ENVELOPES
 ═══════════════════════════════════════════ */

@@ -70,8 +70,29 @@ function showScreen(id) {
 /* ═══════════════════════════════════════════
    SCREEN 1 → SCREEN 2  (postbox click)
 ═══════════════════════════════════════════ */
+function createLetterBurst() {
+  const container = document.getElementById('lettersBurst');
+  const letterCount = 8;
+  const colors = ['#f4c6c6', '#c6d8f4', '#c6f4d2', '#f4e6c6', '#e6c6f4', '#f4c6e6', '#f4c6c6', '#c6d8f4'];
+  
+  for (let i = 0; i < letterCount; i++) {
+    const letter = document.createElement('div');
+    letter.className = 'letter-particle';
+    letter.style.setProperty('--envelope-color', colors[i % colors.length]);
+    letter.style.animationDelay = i * 0.1 + 's';
+    
+    container.appendChild(letter);
+  }
+  
+  // Remove particles after animation
+  setTimeout(() => {
+    container.innerHTML = '';
+  }, 2300);
+}
+
 document.getElementById('openPostbox').addEventListener('click', function () {
   this.classList.add('opening');
+  createLetterBurst();
   setTimeout(() => showScreen('screen-envelopes'), 480);
 });
 
