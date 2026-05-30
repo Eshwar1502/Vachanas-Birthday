@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday 🎂</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital@0;1&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       SCREEN 1: POSTBOX
+  ══════════════════════════════════════════ -->
+  <section id="screen-postbox" class="screen active">
+    <div class="stars-bg"></div>
+    <div class="postbox-scene">
+      <p class="postbox-hint">Something arrived for you ✨</p>
+      <div class="postbox-wrap" id="openPostbox">
+        <div class="postbox">
+          <div class="postbox-flag"></div>
+          <div class="postbox-body">
+            <div class="postbox-slot"></div>
+            <div class="postbox-door"></div>
+          </div>
+          <div class="postbox-stand"></div>
+        </div>
+        <p class="postbox-tap">tap to open</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SCREEN 2: ENVELOPE SELECTION
+  ══════════════════════════════════════════ -->
+  <section id="screen-envelopes" class="screen">
+    <div class="stars-bg"></div>
+    <div class="envelopes-header">
+      <p class="envelopes-subtitle">letters just for you 💌</p>
+      <h1 class="envelopes-title">Pick one to open</h1>
+    </div>
+    <div class="envelopes-grid">
+
+      <div class="envelope-card" data-id="1" style="--clr:#f4c6c6;--seal:#c94040;">
+        <div class="env-body">
+          <div class="env-flap"></div>
+          <div class="env-seal">❦</div>
+        </div>
+        <span class="env-name">Arya</span>
+      </div>
+
+      <div class="envelope-card" data-id="2" style="--clr:#c6d8f4;--seal:#4060c9;">
+        <div class="env-body">
+          <div class="env-flap"></div>
+          <div class="env-seal">✿</div>
+        </div>
+        <span class="env-name">Maya</span>
+      </div>
+
+      <div class="envelope-card" data-id="3" style="--clr:#c6f4d2;--seal:#3aa860;">
+        <div class="env-body">
+          <div class="env-flap"></div>
+          <div class="env-seal">☘</div>
+        </div>
+        <span class="env-name">Riya</span>
+      </div>
+
+      <div class="envelope-card" data-id="4" style="--clr:#f4e6c6;--seal:#c98a40;">
+        <div class="env-body">
+          <div class="env-flap"></div>
+          <div class="env-seal">★</div>
+        </div>
+        <span class="env-name">Zara</span>
+      </div>
+
+      <div class="envelope-card" data-id="5" style="--clr:#e6c6f4;--seal:#8a40c9;">
+        <div class="env-body">
+          <div class="env-flap"></div>
+          <div class="env-seal">♡</div>
+        </div>
+        <span class="env-name">Priya</span>
+      </div>
+
+      <div class="envelope-card" data-id="6" style="--clr:#f4c6e6;--seal:#c94090;">
+        <div class="env-body">
+          <div class="env-flap"></div>
+          <div class="env-seal">✦</div>
+        </div>
+        <span class="env-name">Nisha</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SCREEN 3: LETTER VIEW
+  ══════════════════════════════════════════ -->
+  <section id="screen-letter" class="screen">
+    <div class="stars-bg"></div>
+    <button class="back-btn" id="backBtn">← back</button>
+
+    <div class="letter-scene">
+      <div class="letter-card" id="letterCard">
+
+        <!-- polaroid photo top right -->
+        <div class="letter-polaroid">
+          <img id="letterPhoto" src="https://picsum.photos/seed/birthday1/200/220" alt="photo" />
+          <p class="polaroid-caption" id="polaroidCaption">from my cam! 📷</p>
+        </div>
+
+        <!-- stamp bottom left -->
+        <div class="letter-stamp">
+          <div class="stamp-inner">
+            <div class="stamp-text">✉ LOVE</div>
+          </div>
+        </div>
+
+        <!-- ribbon bow -->
+        <div class="ribbon-bow">🎀</div>
+
+        <!-- letter content -->
+        <div class="letter-body">
+          <p class="letter-dear" id="letterDear">Dear Birthday Girl,</p>
+          <p class="letter-text" id="letterText"></p>
+          <p class="letter-sign" id="letterSign"></p>
+        </div>
+
+        <!-- scattered gold stars -->
+        <div class="deco-stars">
+          <span style="top:12%;left:8%">✦</span>
+          <span style="top:70%;left:5%">★</span>
+          <span style="top:85%;left:12%">✦</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
